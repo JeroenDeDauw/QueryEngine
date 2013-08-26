@@ -29,6 +29,10 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
+			all: {
+				files: ['**/*.js'],
+				tasks: ['jshint', 'nodeunit']
+			},
 			gruntfile: {
 				files: '<%= jshint.gruntfile.src %>',
 				tasks: ['jshint:gruntfile']

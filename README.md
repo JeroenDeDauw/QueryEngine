@@ -18,6 +18,7 @@ Running the tests: npm test
 ## License
 
 Copyright (c) 2013, Jeroen De Dauw
+
 All rights reserved.
 
 All files in this package are licensed under the MPL 2.0 or later.
