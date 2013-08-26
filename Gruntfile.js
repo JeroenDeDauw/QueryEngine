@@ -20,6 +20,9 @@ module.exports = function(grunt) {
 			gruntfile: {
 				src: 'Gruntfile.js'
 			},
+			package: {
+				src: 'package.json'
+			},
 			lib: {
 				src: ['lib/**/*.js']
 			},
