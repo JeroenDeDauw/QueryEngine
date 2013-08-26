@@ -13,6 +13,7 @@ and [npm](https://npmjs.org/).
 
 When not already done so, install the dependencies with: npm install
 
+Running the tests: npm test
 
 ## License
 

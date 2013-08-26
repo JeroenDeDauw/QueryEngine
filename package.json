@@ -44,7 +44,7 @@
 	"main": "index.js",
 
 	"scripts": {
-		"test": "grunt",
+		"test": "./node_modules/.bin/grunt",
 		"coveralls": "jscoverage lib && TEST_COV=1 nodeunit --reporter=lcov test | coveralls"
 	}
 }
