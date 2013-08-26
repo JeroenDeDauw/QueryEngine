@@ -26,4 +26,13 @@ See COPYING for the definition of the MPL 2.0.
 
 ## Links
 
-* [Comparable component written in PHP](https://github.com/wikimedia/mediawiki-extensions-WikibaseQueryEngine)
+* [QueryEngine on TravisCI](https://travis-ci.org/JeroenDeDauw/QueryEngine)
+* [QueryEngine on Ohloh](https://www.ohloh.net/p/QueryEngineJS)
+* [QueryEngine on Gemnasium](https://travis-ci.org/JeroenDeDauw/QueryEngine)
+
+## Associated projects
+
+* [Wikibase QueryEngine (PHP)](https://github.com/wikimedia/mediawiki-extensions-WikibaseQueryEngine)
+* [Wikibase](https://www.mediawiki.org/wiki/Wikibase)
+* [Ask (PHP)](https://github.com/wikimedia/mediawiki-extensions-Ask)
+* [Ask (JS)](https://github.com/JeroenDeDauw/AskJS)
