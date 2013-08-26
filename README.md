@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/JeroenDeDauw/QueryEngine/badge.png?branch=master)](https://coveralls.io/r/JeroenDeDauw/QueryEngine?branch=master)
 [![Dependency Status](https://gemnasium.com/JeroenDeDauw/QueryEngine.png)](https://gemnasium.com/JeroenDeDauw/QueryEngine)
 
-JavaScript query interface to a collection of Wikibase entities
+Query interface to a collection of Wikibase entities.
 
 ## Building the project
 
@@ -24,4 +24,4 @@ See COPYING for the definition of the MPL 2.0.
 
 ## Links
 
-
+* [Comparable component written in PHP](https://github.com/wikimedia/mediawiki-extensions-WikibaseQueryEngine)
