@@ -37,7 +37,7 @@
 		"grunt-contrib-watch": "~0.5.3",
 		"jshint": "2.x",
 		"nodeunit": "~0.8.1",
-		"coveralls": "~2.1",
+		"coveralls": "~2.2",
 		"jscoverage": "*"
 	},
 
