@@ -1,0 +1,46 @@
+{
+	"name": "wikibase-query-engine",
+	"description": "JavaScript query interface to a collection of Wikibase entities",
+
+	"version": "0.0.1",
+
+	"homepage": "https://github.com/JeroenDeDauw/QueryEngine",
+	"bugs": "https://github.com/JeroenDeDauw/QueryEngine/issues",
+
+	"author": "Jeroen De Dauw",
+	"maintainers": ["Jeroen De Dauw <jeroendedauw@gmail.com> (http://bn2vs.com)"],
+
+	"keywords": [
+		"ask",
+		"Wikidata",
+		"Semantic MediaWiki",
+		"Wikibase"
+	],
+
+	"licenses": [
+		{
+			"type": "MPL v2+",
+			"url": "https://github.com/JeroenDeDauw/QueryEngine/blob/master/COPYING"
+		}
+	],
+
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JeroenDeDauw/QueryEngine.git"
+	},
+
+	"devDependencies": {
+		"grunt-cli": "~0.4",
+		"jshint": "2.x",
+		"nodeunit": "~0.8.1",
+		"coveralls": "~2.1",
+		"jscoverage": "*"
+	},
+
+	"main": "index.js",
+
+	"scripts": {
+		"test": "sh jake integrate",
+		"coveralls": "jscoverage lib && TEST_COV=1 nodeunit --reporter=lcov test | coveralls"
+	}
+}
