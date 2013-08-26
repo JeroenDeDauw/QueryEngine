@@ -31,6 +31,10 @@
 
 	"devDependencies": {
 		"grunt-cli": "0.1.9",
+		"grunt": "~0.4.1",
+		"grunt-contrib-jshint": "~0.6.3",
+		"grunt-contrib-nodeunit": "~0.2.0",
+		"grunt-contrib-watch": "~0.5.3",
 		"jshint": "2.x",
 		"nodeunit": "~0.8.1",
 		"coveralls": "~2.1",
@@ -40,7 +44,7 @@
 	"main": "index.js",
 
 	"scripts": {
-		"test": "sh jake integrate",
+		"test": "grunt",
 		"coveralls": "jscoverage lib && TEST_COV=1 nodeunit --reporter=lcov test | coveralls"
 	}
 }
