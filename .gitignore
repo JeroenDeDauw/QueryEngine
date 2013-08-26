@@ -3,6 +3,7 @@
 !.gitignore
 !.idea
 !.travis.yml
+!.jshintrc
 
 *~
 *.kate-swp
