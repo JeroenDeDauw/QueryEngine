@@ -30,7 +30,7 @@
 	},
 
 	"devDependencies": {
-		"grunt-cli": "~0.4",
+		"grunt-cli": "0.1.9",
 		"jshint": "2.x",
 		"nodeunit": "~0.8.1",
 		"coveralls": "~2.1",
