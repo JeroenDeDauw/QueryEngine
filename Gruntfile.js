@@ -31,9 +31,6 @@ module.exports = function(grunt) {
 		nodeunit: {
 			quick: {
 				src: ['test/js/quick/**/*Test.js']
-			},
-			slow: {
-				src: ['test/js/slow/**/*Test.js']
 			}
 		},
 
