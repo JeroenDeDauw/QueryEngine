@@ -1,16 +1,11 @@
-.*
-
-!.gitignore
-!.idea
-!.travis.yml
-!.jshintrc
-
 *~
 *.kate-swp
 *.swp
+*.log
 
+vendor
 node_modules
 lib-cov
 
 .idea/workspace.xml
-npm-debug.log
+composer.lock

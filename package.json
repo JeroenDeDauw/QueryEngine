@@ -39,6 +39,10 @@
 		"nodeunit": "~0.8",
 		"jshint": "2.x",
 
+		"extend": "~1.2",
+		"inherits": "~2.0.1",
+		"async": "~0.2.9",
+
 		"coveralls": "~2",
 		"jscoverage": "*"
 	},

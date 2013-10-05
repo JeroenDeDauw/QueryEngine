@@ -10,45 +10,56 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		nodeunit: {
-			files: ['test/**/*_test.js']
+			quick: {
+				src: ['test/quick/**/*Test.js']
+			},
+			slow: {
+				src: ['test/slow/**/*Test.js']
+			}
 		},
 
 		jshint: {
 			options: {
 				jshintrc: '.jshintrc'
 			},
-			gruntfile: {
-				src: 'Gruntfile.js'
+			projectBase: {
+				src: ['*.js', '*.json']
 			},
-			package: {
-				src: 'package.json'
-			},
-			lib: {
-				src: ['lib/**/*.js']
-			},
-			test: {
-				src: ['test/**/*.js']
+			all: {
+				src: [
+					'src/**/*.js',
+					'test/**/*.js',
+					'*.json'
+				]
 			}
 		},
 
 		watch: {
 			all: {
-				files: ['**/*.js'],
-				tasks: ['jshint', 'nodeunit']
+				files: '<%= jshint.all.src %>',
+				tasks: ['quick']
 			},
-			gruntfile: {
-				files: '<%= jshint.gruntfile.src %>',
-				tasks: ['jshint:gruntfile']
-			},
-			lib: {
-				files: '<%= jshint.lib.src %>',
-				tasks: ['jshint:lib', 'nodeunit']
-			},
-			test: {
-				files: '<%= jshint.test.src %>',
-				tasks: ['jshint:test', 'nodeunit']
+			projectBase: {
+				files: '<%= jshint.projectBase.src %>',
+				tasks: ['jshint:projectBase']
 			}
 		}
 	});
+
+	grunt.task.registerTask(
+		'test',
+		['jshint', 'nodeunit']
+	);
+
+	grunt.task.registerTask(
+		'quick',
+		['jshint', 'nodeunit:quick']
+	);
+
+	grunt.task.registerTask(
+		'build',
+		'Create a new build',
+		function() {} // TODO
+	);
 
 };

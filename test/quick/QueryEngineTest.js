@@ -1,6 +1,6 @@
 'use strict';
 
-var QueryEngine = require('../lib/QueryEngine.js');
+var QueryEngine = require('../../lib/QueryEngine.js');
 
 exports['awesome'] = {
 	setUp: function(done) {
