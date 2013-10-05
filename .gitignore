@@ -3,6 +3,7 @@
 *.swp
 *.log
 
+bin
 vendor
 node_modules
 lib-cov

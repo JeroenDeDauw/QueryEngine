@@ -6,7 +6,7 @@ function sh(command, log, done) {
 	var process = exec(
 		command,
 		function(error, stdout, stderr) {
-			done(error===null);
+			done(error);
 		}
 	);
 
@@ -99,13 +99,48 @@ module.exports = function(grunt) {
 	);
 
 	grunt.task.registerTask(
-		'build',
-		'Create a new build',
+		'install',
+		'Install the project',
 		function() {
-			sh(
-				'php bin/composer.phar install --ansi ; php bin/composer.phar update --ansi',
-				grunt.log.write,
-				this.async()
+			var taskDone = this.async();
+			var async = require('async');
+
+			async.parallel(
+				[
+					function(done) {
+						grunt.log.writeln( 'Downloading http://getcomposer.org/composer.phar' );
+
+						sh(
+							'wget http://getcomposer.org/composer.phar -P bin',
+							function() {},
+							function(error) {
+								grunt.log.writeln('Downloaded http://getcomposer.org/composer.phar');
+								done(error);
+							}
+						);
+					},
+					function(done) {
+						grunt.log.writeln( 'Downloading https://phar.phpunit.de/phpunit.phar' );
+
+						sh(
+							'wget https://phar.phpunit.de/phpunit.phar -P bin',
+							function() {},
+							function(error) {
+								grunt.log.writeln('Downloaded https://phar.phpunit.de/phpunit.phar');
+								done(error);
+							}
+						);
+					}
+				],
+				function() {
+					sh(
+						'php bin/composer.phar install --ansi ; php bin/composer.phar update --ansi',
+						grunt.log.write,
+						function(error) {
+							taskDone(error===null);
+						}
+					);
+				}
 			);
 		}
 	);

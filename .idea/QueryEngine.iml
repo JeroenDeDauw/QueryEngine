@@ -6,14 +6,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library name="PHARS">
-        <CLASSES>
-          <root url="phar://$MODULE_DIR$/bin/composer.phar" />
-          <root url="phar://$MODULE_DIR$/bin/phpunit.phar" />
-        </CLASSES>
-        <SOURCES>
-          <root url="phar://$MODULE_DIR$/bin/composer.phar" />
-          <root url="phar://$MODULE_DIR$/bin/phpunit.phar" />
-        </SOURCES>
+        <CLASSES />
+        <SOURCES />
       </library>
     </orderEntry>
     <orderEntry type="module-library">
