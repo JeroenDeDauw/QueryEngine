@@ -1,0 +1,28 @@
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="test/php/bootstrap.php"
+         cacheTokens="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         strict="true"
+         verbose="true">
+    <testsuites>
+        <testsuite name="QueryEngineQuick">
+            <directory>test/php/quick</directory>
+        </testsuite>
+        <testsuite name="QueryEngineSlow">
+            <directory>test/php/slow</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+</phpunit>

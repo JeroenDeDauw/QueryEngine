@@ -1,20 +1,39 @@
 'use strict';
 
+function sh(command, log, done) {
+	var exec = require('child_process').exec;
+
+	var process = exec(
+		command,
+		function(error, stdout, stderr) {
+			done(error===null);
+		}
+	);
+
+	process.stdout.on(
+		'data',
+		log
+	);
+
+	process.stderr.on(
+		'data',
+		log
+	);
+}
+
 module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['jshint', 'nodeunit']);
-
 	grunt.initConfig({
 		nodeunit: {
 			quick: {
-				src: ['test/quick/**/*Test.js']
+				src: ['test/js/quick/**/*Test.js']
 			},
 			slow: {
-				src: ['test/slow/**/*Test.js']
+				src: ['test/js/slow/**/*Test.js']
 			}
 		},
 
@@ -28,7 +47,7 @@ module.exports = function(grunt) {
 			all: {
 				src: [
 					'src/**/*.js',
-					'test/**/*.js',
+					'test/js/**/*.js',
 					'*.json'
 				]
 			}
@@ -46,6 +65,8 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.registerTask('default', ['test', 'phpunit']);
+
 	grunt.task.registerTask(
 		'test',
 		['jshint', 'nodeunit']
@@ -57,22 +78,25 @@ module.exports = function(grunt) {
 	);
 
 	grunt.task.registerTask(
+		'phpunit',
+		'Run the PHPUnit tests',
+		function() {
+			sh(
+				'php bin/phpunit.phar',
+				grunt.log.write,
+				this.async()
+			);
+		}
+	);
+
+	grunt.task.registerTask(
 		'build',
 		'Create a new build',
 		function() {
-			var done = this.async();
-			var exec = require('child_process').exec;
-
-			var composerProcess = exec(
+			sh(
 				'php bin/composer.phar install --ansi ; php bin/composer.phar update --ansi',
-				function(error, stdout, stderr) {
-					done(error===null);
-				}
-			);
-
-			composerProcess.stdout.on(
-				'data',
-				grunt.log.write
+				grunt.log.write,
+				this.async()
 			);
 		}
 	);
