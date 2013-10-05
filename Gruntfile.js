@@ -59,7 +59,22 @@ module.exports = function(grunt) {
 	grunt.task.registerTask(
 		'build',
 		'Create a new build',
-		function() {} // TODO
+		function() {
+			var done = this.async();
+			var exec = require('child_process').exec;
+
+			var composerProcess = exec(
+				'php bin/composer.phar install --ansi ; php bin/composer.phar update --ansi',
+				function(error, stdout, stderr) {
+					done(error===null);
+				}
+			);
+
+			composerProcess.stdout.on(
+				'data',
+				grunt.log.write
+			);
+		}
 	);
 
 };

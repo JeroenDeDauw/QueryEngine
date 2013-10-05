@@ -11,9 +11,9 @@ Query interface to a collection of Wikibase entities.
 Assumes presence of [Node.js](http://nodejs.org/)
 and [npm](https://npmjs.org/).
 
-When not already done so, install the dependencies with: npm install
+Setting up the project: "npm install ; grunt build"
 
-Running the tests: npm test
+Running the tests: "npm test" (or "grunt")
 
 ## License
 
