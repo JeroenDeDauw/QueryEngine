@@ -18,7 +18,7 @@ Running the tests: "npm test" (or "grunt")
 ## License
 
 All files in this package are licensed under the GNU GPL v2 or later.
-See [COPYING file](COPYING) for the definition of the GNU GPL v2.
+See the [COPYING file](COPYING) for the definition of the GNU GPL v2.
 
 ## Links
 
