@@ -11,7 +11,7 @@ Query interface to a collection of Wikibase entities.
 Assumes presence of [Node.js](http://nodejs.org/)
 and [npm](https://npmjs.org/).
 
-Setting up the project: "npm install ; grunt build"
+Setting up the project: "npm install"
 
 Running the tests: "npm test" (or "grunt")
 
