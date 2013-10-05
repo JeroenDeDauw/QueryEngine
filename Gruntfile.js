@@ -46,7 +46,7 @@ module.exports = function(grunt) {
 			},
 			all: {
 				src: [
-					'src/**/*.js',
+					'lib/**/*.js',
 					'test/js/**/*.js',
 					'*.json'
 				]
@@ -55,7 +55,13 @@ module.exports = function(grunt) {
 
 		watch: {
 			all: {
-				files: '<%= jshint.all.src %>',
+				files: [
+					'lib/**/*.js',
+					'test/js/**/*.js',
+					'src/**/*.php',
+					'test/php/**/*.php',
+					'*.json'
+				],
 				tasks: ['quick']
 			},
 			projectBase: {
@@ -74,15 +80,21 @@ module.exports = function(grunt) {
 
 	grunt.task.registerTask(
 		'quick',
-		['jshint', 'nodeunit:quick']
+		['jshint', 'nodeunit:quick', 'phpunit:QueryEngineQuick']
 	);
 
 	grunt.task.registerTask(
 		'phpunit',
 		'Run the PHPUnit tests',
-		function() {
+		function(testSuite) {
+			var command = 'php bin/phpunit.phar';
+
+			if (testSuite) {
+				command += ' --testsuite=' + testSuite;
+			}
+
 			sh(
-				'php bin/phpunit.phar',
+				command,
 				grunt.log.write,
 				this.async()
 			);
