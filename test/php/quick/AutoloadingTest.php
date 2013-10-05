@@ -15,6 +15,7 @@ class AutoloadingTest extends \PHPUnit_Framework_TestCase {
 
 	public function testDependencyClassesAreLoaded() {
 		$this->assertTrue( class_exists( 'Ask\Language\Query' ) );
+		$this->assertTrue( interface_exists( 'Wikibase\QueryEngine\QueryEngine' ) );
 	}
 
 }

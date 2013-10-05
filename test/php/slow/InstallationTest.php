@@ -11,7 +11,8 @@ use QueryEngine\Config;
 class InstallationTest extends \PHPUnit_Framework_TestCase {
 
 	public function testCanConstructNewConfig() {
-
+		new Config();
+		$this->assertTrue( true );
 	}
 
 }
